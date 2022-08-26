@@ -1,4 +1,4 @@
-# InstallAndroidOnVirtualbox
+# Install Android On Virtualbox
 
 ## install needed tools
 http://www.android-x86.org/ get the ISO
@@ -47,3 +47,20 @@ Storage: 8GB Recommended More if you need it
 ## Using Android VM
 + Choose to not turn on wifi (VM will use the PC's connection)
 + Sign in and finish up
++ Once in, go to setting and choose the VM wifi connection if needed.
+
+## Troubleshooting
+
+### Cant enter GUI
++ Choose File > Close > Power off the machine. Start the Android VM again, but this time choose Android x86 debug mode.
++ Execute the following commands one by one to open the menu.lst file.
+  + mount –o remount,rw /mnt
+  + vi /mnt/grub/menu.lst
+  + After the menu.lst file is opened, press “i” key to enter the edit mode. 
+  + Then, add “nomodeset_” before “quiet root” in the first title section (likely called Android-x86 \[insert version number]-r2). 
+  + After that, press “Esc” key to exit the edit mode. Then, press “:wq” and Enter to save changes and quit.
++ Choose File > Close > Power off the machine. 
++ Start the Android VM again and choose Android x86. Wait until you enter the GUI. 
++ Please follow the on-screen instructions to set up Android.
+
+Some people also report that they have solved the problem by going to Settings > Display, setting graphic controller to VBoxVGA, and then turning on or off the 3D Acceleration accordingly.
