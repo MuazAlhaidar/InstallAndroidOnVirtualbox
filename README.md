@@ -2,6 +2,7 @@
 
 ## install needed tools
 http://www.android-x86.org/ get the ISO
+
 https://www.virtualbox.org/wiki/VirtualBox get virtual box from either the link or through the command line
 
 ## Create the VM
